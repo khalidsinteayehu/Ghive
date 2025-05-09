@@ -1,0 +1,11 @@
+name: Deploy Streamlit App
+on: [push]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: streamlit/streamlit-action@v1
+        with:
+          app: src/app/main.py  # Path to your Streamlit app
+          cloud: true           # Deploy to Streamlit Cloud
